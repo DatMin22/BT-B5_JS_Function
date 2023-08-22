@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>JS Function</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- BOXICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css"
+        integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <div class="wrap">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class=" btn mr-2 mt-2 active" id="pills-home-tab" data-toggle="pill"
+                        data-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                        aria-selected="true"><b>Bài
+                            1</b></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class=" btn  mr-2 mt-2" id="pills-electricMoney-tab" data-toggle="pill"
+                        data-target="#pills-electricMoney" type="button" role="tab" aria-controls="pills-electricMoney"
+                        aria-selected="false"><b>Bài 2</b></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class=" btn  mr-2 mt-2" id="pills-selfTax-tab" data-toggle="pill"
+                        data-target="#pills-selfTax" type="button" role="tab" aria-controls="pills-selfTax"
+                        aria-selected="false"><b>Bài 3</b></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class=" btn  mr-2 mt-2" id="pills-bills-tab" data-toggle="pill" data-target="#pills-bills"
+                        type="button" role="tab" aria-controls="pills-bills" aria-selected="false"><b>Bài
+                            4</b></button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <!-- Bài 1 -->
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="container mt-5">
+                        <h2>Tuyển sinh</h2>
+                        <form id="admissionForm">
+                            <div class="row">
+                                <div class="form-group col-4">
+                                    <label for="passingScore">Điểm chuẩn:</label>
+                                    <input type="number" class="form-control bg-transparent border-0 text-dark"
+                                        id="passingScore" required>
+                                </div>
+                                <div class="form-group col-4">
+                                    <label for="region">Khu vực ưu tiên:</label>
+                                    <select class="form-control bg-transparent border-0 text-dark" id="region"
+                                        required>
+                                        <option class="text-dark" value="X">Không thuộc</option>
+                                        <option class="text-dark" value="A">Khu vực A</option>
+                                        <option class="text-dark" value="B">Khu vực B</option>
+                                        <option class="text-dark" value="C">Khu vực C</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-4">
+                                    <label for="target">Đối tượng ưu tiên:</label>
+                                    <select class="form-control bg-transparent border-0 text-dark" id="target"
+                                        required>
+                                        <option class="text-dark" value="0">Không thuộc</option>
+                                        <option class="text-dark" value="1">Đối tượng 1</option>
+                                        <option class="text-dark" value="2">Đối tượng 2</option>
+                                        <option class="text-dark" value="3">Đối tượng 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-4">
+                                    <label for="subject1">Điểm môn 1:</label>
+                                    <input type="number" class="form-control bg-transparent border-0 text-dark"
+                                        id="subject1" required>
+                                </div>
+                                <div class="form-group col-4">
+                                    <label for="subject2">Điểm môn 2:</label>
+                                    <input type="number" class="form-control bg-transparent border-0 text-dark"
+                                        id="subject2" required>
+                                </div>
+                                <div class="form-group col-4">
+                                    <label for="subject3">Điểm môn 3:</label>
+                                    <input type="number" class="form-control bg-transparent border-0 text-dark"
+                                        id="subject3" required>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn but"><b>Kiểm tra</b></button>
+                        </form>
+                        <div id="resultTuyenSinh" class="alert alert-success mt-4"><i class='bx bxs-hand-right'></i></div>
+                    </div>
+                    <!-- ------------------------------------------------------ -->
+
+                </div>
+                <!-- Bài 2 -->
+                <div class="tab-pane fade " id="pills-electricMoney" role="tabpanel"
+                    aria-labelledby="pills-electricMoney-tab">
+                    <!-- TÍNH TIỀN ĐIỆN -->
+                    <div class="container mt-5">
+                        <h2>Tính tiền điện</h2>
+                        <form id="electricityForm">
+                            <div class="form-group">
+                                <label for="name">Tên khách hàng:</label>
+                                <input type="text" class="form-control bg-transparent border-0 text-dark" id="name"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="consumption">Số kw điện tiêu thụ mỗi tháng:</label>
+                                <input type="number" class="form-control bg-transparent border-0 text-dark"
+                                    id="consumption" required>
+                            </div>
+                            <button type="submit" class="btn  but"><b>Tính</b></button>
+                        </form>
+                        <div id="result" class="alert alert-success mt-4"><i class='bx bxs-hand-right'></i></div>
+                    </div>
+                    <!--/ TÍNH TIỀN ĐIỆN -->
+                    <!-- ----------------------------------------- -->
+                </div>
+                <!-- Bài 3 -->
+                <div class="tab-pane fade" id="pills-selfTax" role="tabpanel" aria-labelledby="pills-selfTax-tab">
+                    <!-- TÍNH THUẾ THU NHẬP CÁ NHÂN -->
+                    <div class="container mt-5">
+                        <h2>Tính thuế thu nhập cá nhân</h2>
+                        <form id="taxForm">
+                            <div class="form-group">
+                                <label for="fullName">Họ và tên:</label>
+                                <input type="text" class="form-control bg-transparent border-0 text-dark" id="fullName"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="income">Tổng thu nhập năm (triệu đồng):</label>
+                                <input type="number"
+                                    class="form-control bg-transparent border-0 text-dark CurrencyInput" id="income"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dependents">Số người phụ thuộc:</label>
+                                <input type="number" class="form-control bg-transparent border-0 text-dark"
+                                    id="dependents" required>
+                            </div>
+                            <button type="submit" class="btn  but"><b>Tính</b></button>
+                        </form>
+                        <div id="resultTax" class="alert alert-success mt-4"><i class='bx bxs-hand-right'></i></div>
+                    </div>
+                    <!--/ TÍNH THUẾ THU NHẬP CÁ NHÂN -->
+                    <!-- ----------------------------------------- -->
+
+                </div>
+                <!-- Bài 4 -->
+                <div class="tab-pane fade" id="pills-bills" role="tabpanel" aria-labelledby="pills-bills-tab">
+                    <!-- TÍNH TIỀN CÁP -->
+                    <div class="container mt-5">
+                        <h2>Tính hóa đơn khách hàng</h2>
+                        <form id="billForm">
+                            <div class="form-group">
+                                <label for="customerCode">Mã khách hàng:</label>
+                                <input type="text" class="form-control bg-transparent border-0 text-dark"
+                                    id="customerCode" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerType">Loại khách hàng:</label>
+                                <select class="form-control bg-transparent border-0 text-dark" id="customerType"
+                                    required>
+                                    <option value="" disabled selected>Chọn loại khách hàng</option>
+                                    <option value="household">Nhà dân</option>
+                                    <option value="business">Doanh nghiệp</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="connections">Số kết nối:</label>
+                                <input type="number" class="form-control bg-transparent border-0 text-dark"
+                                    id="connections" required disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="premiumChannels">Số kênh cao cấp:</label>
+                                <input type="number" class="form-control bg-transparent border-0 text-dark"
+                                    id="premiumChannels" required>
+                            </div>
+                            <button type="submit" class="btn  but"><b>Tính</b></button>
+                        </form>
+                        <div id="resultTienCap" class="alert alert-success mt-4"><i class='bx bxs-hand-right'></i></div>
+                    </div>
+                    <!--/ TÍNH TIỀN CÁP -->
+                    <!-- ----------------------------------------- -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- TÍNH THUẾ THU NHẬP CÁ NHÂN -->
+    <!--/ TÍNH THUẾ THU NHẬP CÁ NHÂN -->
+    <!-- ----------------------------------------- -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
